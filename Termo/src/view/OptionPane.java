@@ -10,7 +10,7 @@ public class OptionPane {
 	private final String MESSAGE_ABOUT = 
 		"Termo"
 		+ "\nCopyright © Mar 2022"
-		+ "\n\nVersão: 0.4.0"
+		+ "\n\nVersão: 0.4.1"
 		+ "\n\nAmaury Tavares"
 		+ "\namauryot@gmail.com\n\n";
 	

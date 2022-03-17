@@ -45,9 +45,11 @@ public class Window {
 	
 	public String userWord() {
 		String word = "";
+		
 		for (int column = 0; column < LETTERS; column++) {
 			word += subPanelTextFields.textFieldArray()[actualRow][column].getText();
 		}
+		
 		return word;
 	}
 	
@@ -66,9 +68,11 @@ public class Window {
 	
 	private void selectRow(int row) {
 		actualRow = row;
+		
 		for (int column = 0; column < LETTERS; column++) {
 			subPanelTextFields.textFieldArray()[actualRow][column].setEditable(true);
 		}
+		
 		subPanelTextFields.textFieldArray()[actualRow][0].requestFocusInWindow();
 	}
 	
@@ -81,7 +85,9 @@ public class Window {
 			subPanelTextFields.textFieldArray()[actualRow][column].setText("");
 			subPanelTextFields.textFieldArray()[actualRow][column].setBackground(Color.WHITE);
 		}
+		
 		subPanelKeyboard.keyList().forEach(key -> key.setBackground(null));
+		
 		subPanelTextFields.textFieldArray()[actualRow][0].requestFocusInWindow();
 	}
 	
@@ -93,7 +99,9 @@ public class Window {
 				subPanelTextFields.textFieldArray()[row][column].setEditable(false);
 			}
 		}
+		
 		subPanelKeyboard.keyList().forEach(key -> key.setBackground(null));
+		
 		selectRow(0);
 	}
 	
