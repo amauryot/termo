@@ -12,11 +12,11 @@ public class Word {
 		random = new Random();
 		database = new Database();
 		nextWord();
-		System.out.println(word());
 	}
 	
 	public void nextWord() {
 		index = random.nextInt(database.size());
+		System.out.println(word());
 	}
 	
 	public String word() {

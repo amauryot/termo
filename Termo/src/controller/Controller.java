@@ -33,7 +33,8 @@ public class Controller implements ActionListener {
 		/* MENU ITEM NEW GAME */
 		
 		if (event.getSource() == window.getMenuItem(MenuItem.NEW_GAME)) {
-			// TODO
+			window.reset();
+			wordDatabase.nextWord();
 			return;
 		}
 		
@@ -73,7 +74,9 @@ public class Controller implements ActionListener {
 			}
 			
 			if (wordDatabase.word().equals(window.userWord())) {
-				// TODO WIN!!!
+				optionPane.showMessageWinner();
+				window.reset();
+				wordDatabase.nextWord();
 				return;
 			}
 			

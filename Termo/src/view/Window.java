@@ -16,6 +16,7 @@ import view.subpanel.textfields.SubPanelTextFields;
 
 public class Window {
 
+	private final int WORDS = 6;
 	private final int LETTERS = 5;
 	
 	private Frame frame;
@@ -82,6 +83,18 @@ public class Window {
 		}
 		subPanelKeyboard.keyList().forEach(key -> key.setBackground(null));
 		subPanelTextFields.textFieldArray()[actualRow][0].requestFocusInWindow();
+	}
+	
+	public void reset() {
+		for (int row = 0; row < WORDS; row++) {
+			for (int column = 0; column < LETTERS; column++) {
+				subPanelTextFields.textFieldArray()[row][column].setText("");
+				subPanelTextFields.textFieldArray()[row][column].setBackground(null);
+				subPanelTextFields.textFieldArray()[row][column].setEditable(false);
+			}
+		}
+		subPanelKeyboard.keyList().forEach(key -> key.setBackground(null));
+		selectRow(0);
 	}
 	
 	public void addController(Controller controller) {
