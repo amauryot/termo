@@ -50,6 +50,7 @@ public class SubPanelTextFields extends JPanel {
 				JTextField textField = new JTextField();
 				textField.setHorizontalAlignment(JTextField.CENTER);
 				textField.setFont(textFieldFont);
+				textField.setEditable(false);
 				this.add(textField);
 				textFieldArray[row][column] = textField;
 			}
