@@ -4,9 +4,9 @@ import java.util.Random;
 
 public class Word {
 
+	private int index;
 	private Random random;
 	private Database database;
-	private int index;
 	
 	public Word() {
 		random = new Random();

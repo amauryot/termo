@@ -14,9 +14,10 @@ public class SubPanelTextFields extends JPanel {
 	private final int GRID_COLS = 5;
 	private final int GRID_HGAP = 10;
 	private final int GRID_VGAP = 10;
-	private final int SUBPANEL_X = 70;
-	private final int SUBPANEL_Y = 10;
-	private final int SUBPANEL_WIDTH = 290;
+	
+	private final int SUBPANEL_X      = 70;
+	private final int SUBPANEL_Y      = 10;
+	private final int SUBPANEL_WIDTH  = 290;
 	private final int SUBPANEL_HEIGHT = 350;
 	
 	private JTextField[][] textFieldArray;

@@ -11,12 +11,13 @@ import view.frame.MenuItem;
 import view.panel.PanelMain;
 import view.subpanel.buttons.Button;
 import view.subpanel.buttons.SubPanelButtons;
+import view.subpanel.keyboard.Key;
 import view.subpanel.keyboard.SubPanelKeyboard;
 import view.subpanel.textfields.SubPanelTextFields;
 
 public class Window {
 
-	private final int WORDS = 6;
+	private final int WORDS   = 6;
 	private final int LETTERS = 5;
 	
 	private Frame frame;
@@ -24,7 +25,9 @@ public class Window {
 	private SubPanelTextFields subPanelTextFields;
 	private SubPanelKeyboard subPanelKeyboard;
 	private SubPanelButtons subPanelButtons;
-	private int actualRow;
+	
+	private int actualRow    = 0;
+	private int actualColumn = 0;
 	
 	public Window() {
 		initialize();
@@ -39,8 +42,21 @@ public class Window {
 		return subPanelButtons.buttonList().get(button.index());
 	}
 	
-	public int getLetters() {
+	public JButton getKey(Key key) {
+		return subPanelKeyboard.keyList().get(key.index());
+	}
+	
+	public int numberOfLetters() {
 		return LETTERS;
+	}
+	
+	public void setLetter(String letter) {
+		subPanelTextFields.textFieldArray()[actualRow][actualColumn].setText(letter);
+		
+		if (actualColumn < LETTERS - 1) {
+			actualColumn++;
+			subPanelTextFields.textFieldArray()[actualRow][actualColumn].requestFocusInWindow();
+		}
 	}
 	
 	public String userWord() {
@@ -77,6 +93,7 @@ public class Window {
 	}
 	
 	public void nextRow() {
+		actualColumn = 0;
 		selectRow(actualRow + 1);
 	}
 	
@@ -86,9 +103,8 @@ public class Window {
 			subPanelTextFields.textFieldArray()[actualRow][column].setBackground(Color.WHITE);
 		}
 		
-		subPanelKeyboard.keyList().forEach(key -> key.setBackground(null));
-		
-		subPanelTextFields.textFieldArray()[actualRow][0].requestFocusInWindow();
+		actualColumn = 0;
+		subPanelTextFields.textFieldArray()[actualRow][actualColumn].requestFocusInWindow();
 	}
 	
 	public void reset() {
@@ -102,12 +118,14 @@ public class Window {
 		
 		subPanelKeyboard.keyList().forEach(key -> key.setBackground(null));
 		
+		actualColumn = 0;
 		selectRow(0);
 	}
 	
 	public void addController(Controller controller) {
 		frame.menuItemList().forEach(menuItem -> menuItem.addActionListener(controller));
 		subPanelButtons.buttonList().forEach(button -> button.addActionListener(controller));
+		subPanelKeyboard.keyList().forEach(key -> key.addActionListener(controller));
 	}
 	
 	public void show() {

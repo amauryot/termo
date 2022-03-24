@@ -3,7 +3,7 @@ package view.subpanel.buttons;
 public enum Button {
 
 	CHECK(0, "Verificar"),
-	CLEAR(1, "Limpar");
+	CLEAR(1, "Limpar"   );
 	
 	private int index;
 	private String title;

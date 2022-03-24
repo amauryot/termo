@@ -5,12 +5,12 @@ import javax.swing.JOptionPane;
 public class OptionPane {
 
 	private final String MESSAGE_WINNER = "Parabéns! Você acertou a palavra.";
-	private final String WINNER_TITLE = "Vencedor!";
-	private final String MESSAGE_TITLE = "Sobre Termo";
-	private final String MESSAGE_ABOUT = 
+	private final String WINNER_TITLE   = "Vencedor!";
+	private final String MESSAGE_TITLE  = "Sobre Termo";
+	private final String MESSAGE_ABOUT  =
 		"Termo"
 		+ "\nCopyright © Mar 2022"
-		+ "\n\nVersão: 0.4.1"
+		+ "\n\nVersão: 0.5.0"
 		+ "\n\nAmaury Tavares"
 		+ "\namauryot@gmail.com\n\n";
 	

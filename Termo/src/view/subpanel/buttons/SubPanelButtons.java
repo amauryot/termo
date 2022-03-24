@@ -2,6 +2,7 @@ package view.subpanel.buttons;
 
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.Insets;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -15,9 +16,10 @@ public class SubPanelButtons extends JPanel {
 	private final int GRID_COLS = 2;
 	private final int GRID_HGAP = 78;
 	private final int GRID_VGAP = 0;
-	private final int SUBPANEL_X = 86;
-	private final int SUBPANEL_Y = 570;
-	private final int SUBPANEL_WIDTH = 258;
+	
+	private final int SUBPANEL_X      = 86;
+	private final int SUBPANEL_Y      = 570;
+	private final int SUBPANEL_WIDTH  = 258;
 	private final int SUBPANEL_HEIGHT = 30;
 	
 	private ArrayList<JButton> buttonList;
@@ -49,6 +51,7 @@ public class SubPanelButtons extends JPanel {
 		for (Button buttonEnum : Button.values()) {
 			JButton button = new JButton(buttonEnum.title());
 			button.setFont(buttonFont);
+			button.setMargin(new Insets(0, 0, 0, 0));
 			button.setFocusable(false);
 			this.add(button);
 			buttonList.add(button);
